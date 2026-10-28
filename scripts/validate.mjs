@@ -198,7 +198,7 @@ for (const name of readdirSync(ROOT)) {
   if (name === '.git' || name === '.gitignore') continue;
   const p = join(ROOT, name);
   if (statSync(p).isDirectory()) {
-    if (!REQUIRED_DIRS.includes(name) && !['.freebuff', '.claude'].includes(name))
+    if (!REQUIRED_DIRS.includes(name) && !['.freebuff', '.claude', '.github'].includes(name))
       err(`10. unexpected directory: ${name}/`);
   } else if (name.endsWith('.md') && !['SKILL.md', 'README.md', 'ATTRIBUTION.md'].includes(name)) {
     err(`10. unexpected top-level markdown: ${name}`);
